@@ -11,5 +11,8 @@ What it does:
 What it doesn't: 
 - specify trusted sites
 
+Known issues:
+- none currently (18/03/2025)
+
 Future plans:
 - create an iOS plugin version (I don't own a mac and currently can't compile the plugin)
