@@ -10,3 +10,6 @@ What it does:
   
 What it doesn't: 
 - specify trusted sites
+
+Future plans:
+- create an iOS plugin version (I don't own a mac and currently can't compile the plugin)
