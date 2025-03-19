@@ -11,7 +11,7 @@ What it does:
   b) last visited url (plugin saves the last visited url; but need to use this argument) 
   c) user provided url (for instance by linking it to LineEdit node for user input)
   
-What it doesn't: 
+What it/you can't do: 
 - specify trusted sites
 
 Possible use case:
