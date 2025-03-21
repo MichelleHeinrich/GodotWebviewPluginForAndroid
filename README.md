@@ -27,7 +27,7 @@ Functions/methods exposed to Godot (and can be used in GDscript):
   
   
 What it/you can't do: 
-- specify trusted sites through the plugin but you should be able to disallow certain website by using a match or similar statement in GDscript
+- specify trusted sites through the plugin though I imagine you could do so through GDscript
 
 Possible use case:
 - want to resume the url after app is minimised (Saves url as last visited when initially opened)
