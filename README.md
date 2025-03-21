@@ -14,7 +14,7 @@ Functions/methods exposed to Godot (and can be used in GDscript):
   
   - openUrl(string url, string instanceName)
   - saveUrl(string url, string instanceName,)
-  - openLastUrl(string defaultUrl, string instanceName,)
+  - openLastUrl(string defaultUrl, string instanceName)
   - onPause
   - onBackPressed
 
