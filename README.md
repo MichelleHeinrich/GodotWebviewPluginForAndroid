@@ -11,20 +11,20 @@ What it does:
   b) last visited url (plugin saves the last visited url; but need to use an argument) 
   c) user provided url; i.e. custom Url (for instance by linking it to LineEdit node for user input)
 
-How to use in GDscript:
+Functions/methods exposed to Godot (and can be used in GDscript):
   var webview = singleton
 
-  openUrl(string url, string instanceName)
-  saveUrl(string instanceName)
-  openLastUrl(string instanceName)
-  onPause
-  onBackPressed
+  - openUrl(string url, string instanceName)
+  - saveUrl(string instanceName)
+  - openLastUrl(string instanceName)
+  - onPause
+  - onBackPressed
 
-  Functions/methods exposed to Godot (and can be used in GDscript):
-  - openUrl = open an url that is either specfied as an argument locally or received by a signal with the url as the argument; if istance name is not null, it'll save that opened url as last url
-  - saveUrl = saves the Url to a named instance (string argument); choose any instance name, perfect for managing webviews in separate nodes for which you want to keep the last url separated from each other
-  - openLastUrl = opens the last url by instanceName (string argument), and takes an url as another string argument to set as a fallback url
-  - onPause = saves the last visited Url when the app is minimised (takes an instance name)
+  What each function/method does in GDScript:
+  - openUrl = opens an url that is either specfied as an argument locally or received by a signal with the url as the argument; if istance name is not null, it'll save that opened url as last url
+  - saveUrl = saves the Url to a named instance (string argument); choose any instance name, perfect for managing webviews in separate nodes for which you want to keep the last url separated
+  - openLastUrl = opens the last url by instanceName (string argument), and takes an url as another string argument to set a fallback url
+  - onPause = saves the last visited url when the app is minimised (takes an instance name)
   - onBackPressed/OnKeyDown = webview isn't closed when going back
   
   
