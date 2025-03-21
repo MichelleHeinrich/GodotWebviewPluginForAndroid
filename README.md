@@ -12,8 +12,7 @@ What it does:
   c) user provided url; i.e. custom Url (for instance by linking it to LineEdit node for user input)
 
 Functions/methods exposed to Godot (and can be used in GDscript):
-  var webview = singleton
-
+  
   - openUrl(string url, string instanceName)
   - saveUrl(string instanceName)
   - openLastUrl(string instanceName)
