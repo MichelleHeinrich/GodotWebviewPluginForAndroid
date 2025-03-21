@@ -6,8 +6,8 @@ What the plugin does:
 - display any url in a webview (using openUrl)
 - save and load last visited url (using saveUrl and openLastUrl)
 - set a default website (using openUrl)
-- allow users to input an url to be displayed in a webview (using signals to pass url as an argument to openUrl)
-- none of these are global settings, so a link set in one script won't affect the url in another; kept separate by using instanceName (string argument) so any instance can have their own save and last visited url
+- allow users to input an url to be displayed in a webview (Noted: you need to use signals and pass the input url as an argument to openUrl)
+- NOTE: none of these are global settings, so a link set in one script won't affect the url in another; kept separate by using instanceName (string argument) so any instance can have their own save and last visited url
 
 
 Functions/methods exposed to Godot (and can be used in GDscript):
@@ -31,7 +31,7 @@ What it/you can't do:
 
 Possible use case:
 - want to resume the url after app is minimised (Saves url as last visited when initially opened)
-- want the user to choose between multiple website (you set the default ones in the script but the labels are whatever you like)
+- want the user to choose between/from multiple website (you set the default ones in the script but the labels are whatever you like)
 - allow ability to input their own, either from the get go or alongside the option of a default, or perhaps even last visited, url.
 
 Known issues:
