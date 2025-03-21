@@ -2,14 +2,13 @@
 
 This is a simple android plugin to be used in Godot (tested with 4.4) and allows for webview access. 
 
-What it does:
-- allow http and https website access
-- save and load last played video
-- default website set to youtube.com
-- choose to display either of the following from GDscript by choosing one of three arguments (default_url, lastUrl, inputUrl):
-  a) default url (specify the url in your script),
-  b) last visited url (plugin saves the last visited url; but need to use an argument) 
-  c) user provided url; i.e. custom Url (for instance by linking it to LineEdit node for user input)
+What the plugin does:
+- display any url in a webview (using openUrl)
+- save and load last visited url (saveUrl)
+- set a default website (using openUrl)
+- allow users to input an url to be displayed in a webview (using signals to pass url as an argument to openUrl)
+- none of these are global settings, so a link set in one script won't affect the url in another; kept separate by using instanceName (string argument) so any instance can have their own save and last visited url
+
 
 Functions/methods exposed to Godot (and can be used in GDscript):
   
@@ -20,9 +19,9 @@ Functions/methods exposed to Godot (and can be used in GDscript):
   - onBackPressed
 
   What each function/method does in GDScript:
-  - openUrl = opens an url that is either specfied as an argument locally or received by a signal with the url as the argument; if istance name is not null, it'll save that opened url as last url
-  - saveUrl = saves the Url to a named instance (string argument); choose any instance name, perfect for managing webviews in separate nodes for which you want to keep the last url separated
-  - openLastUrl = opens the last url by instanceName (string argument), and takes an url as another string argument to set a fallback url
+  - openUrl = opens an url that is either explicitly stated or received by a signal with the url as the argument; if istance name is not null, it'll save that opened url as last url (calls saveUrl)
+  - saveUrl = saves the url to a named instance (string argument); choose any instance name, perfect for managing webviews in separate nodes for which you want to keep the last url separate
+  - openLastUrl = opens the last url by instanceName (string argument), and takes an url as another string argument to set a fallback/default url
   - onPause = saves the last visited url when the app is minimised (takes an instance name)
   - onBackPressed/OnKeyDown = webview isn't closed when going back
   
