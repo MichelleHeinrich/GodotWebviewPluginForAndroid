@@ -8,11 +8,28 @@ What it does:
 - default website set to youtube.com
 - choose to display either of the following from GDscript by choosing one of three arguments (default_url, lastUrl, inputUrl):
   a) default url (specify the url in your script),
-  b) last visited url (plugin saves the last visited url; but need to use this argument) 
-  c) user provided url (for instance by linking it to LineEdit node for user input)
+  b) last visited url (plugin saves the last visited url; but need to use an argument) 
+  c) user provided url; i.e. custom Url (for instance by linking it to LineEdit node for user input)
+
+How to use in GDscript:
+  var webview = singleton
+
+  openUrl(string url, string instanceName)
+  saveUrl(string instanceName)
+  openLastUrl(string instanceName)
+  onPause
+  onBackPressed
+
+  Functions/methods exposed to Godot (and can be used in GDscript):
+  - openUrl = open an url that is either specfied as an argument locally or received by a signal with the url as the argument; if istance name is not null, it'll save that opened url as last url
+  - saveUrl = saves the Url to a named instance (string argument); choose any instance name, perfect for managing webviews in separate nodes for which you want to keep the last url separated from each other
+  - openLastUrl = opens the last url by instanceName (string argument), and takes an url as another string argument to set as a fallback url
+  - onPause = saves the last visited Url when the app is minimised (takes an instance name)
+  - onBackPressed/OnKeyDown = webview isn't closed when going back
+  
   
 What it/you can't do: 
-- specify trusted sites
+- specify trusted sites through the plugin but you should be able to disallow certain website by using a match or similar statement in GDscript
 
 Possible use case:
 - want to resume the url after app is minimised (Saves url as last visited when initially opened)
