@@ -4,7 +4,7 @@ This is a simple android plugin to be used in Godot (tested with 4.4) and allows
 
 What the plugin does:
 - display any url in a webview (using openUrl)
-- save and load last visited url (saveUrl)
+- save and load last visited url (using saveUrl and openLastUrl)
 - set a default website (using openUrl)
 - allow users to input an url to be displayed in a webview (using signals to pass url as an argument to openUrl)
 - none of these are global settings, so a link set in one script won't affect the url in another; kept separate by using instanceName (string argument) so any instance can have their own save and last visited url
