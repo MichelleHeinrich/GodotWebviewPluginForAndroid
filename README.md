@@ -13,12 +13,13 @@ What the plugin does:
 Functions/methods exposed to Godot (and can be used in GDscript):
   
   - openUrl(string url, string instanceName)
-  - saveUrl( string url, string instanceName,)
+  - saveUrl(string url, string instanceName,)
   - openLastUrl(string defaultUrl, string instanceName,)
   - onPause
   - onBackPressed
 
   What each function/method does in GDScript:
+  - if an instanceName is null, openUrl won't save the url as last visited, and saveUrl won't save the last visited url properly
   - openUrl = opens an url that is either explicitly stated or received by a signal with the url as the argument; if istance name is not null, it'll save that opened url as last url (calls saveUrl)
   - saveUrl = saves the url to a named instance (string argument); choose any instance name, perfect for managing webviews in separate nodes for which you want to keep the last url separate
   - openLastUrl = opens the last url by instanceName (string argument), and takes an url as another string argument to set a fallback/default url
